@@ -6,9 +6,9 @@ var ProductSchema = new Schema({
   title: String,
   type:String,
   cost:Number,
-  discount:Number,
-  size:String,
-  amount:Number,
+  M:Number,
+  L:Number,
+  XL:Number,
   description: String,
   image:String
 });

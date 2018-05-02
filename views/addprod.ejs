@@ -1,75 +1,157 @@
-<div>
-        <div class="container-fluid">
-            <div class="col-md-6">
-                <button class="form-control lg" style="text-align:center;" data-toggle="modal" data-target="#addprod">Add New Product <span class="glyphicon glyphicon-plus" style="margin-right:15px"></span></button>
-            </div>
-            <div class="col-md-12">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>Product ID</th>
-                            <th>Name</th>
-                            <th>M</th>
-                            <th>L</th>
-                            <th>XL</th>
-                            <th>Desc.</th>
-                            <th>Image</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+</head>
 
-                        <tr>
-                            
-                        </tr>
-                    </tbody> 
-                </table>
-            </div>
-            <div id="addprod" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                           <h4>Add Product</h4>
-                        </div>
-                        <div class="modal-body">
-                            <form class="form-group form-inline">
-                                <label for="name" style="padding-right:20px">Product : </label><input id="name" class="form-control" style="width:350px;"/><br>
-                                <label for="M" style="padding-top:20px;padding-right:45px">M : </label><input id="M" class="form-control" style="padding-top:20px;width:350px;"/>
-                                <label for="L" style="padding-top:20px;padding-right:17px">L : </label><input id="L" class="form-control" style="padding-top:20px;width:350px;"/>
-                                <label for="XL" style="padding-top:20px;padding-right:17px">XL : </label><input id="XL" class="form-control" style="padding-top:20px;width:350px;"/>
-                                <label for="Desc" style="padding-top:20px;padding-right:17px"></label><input id="desc" class="form-control" style="padding-top:20px;width:300px"/>
-                                <label for-"img" style="padding-top:20px;padding-right:17px"></label><input type="file" class="form-control" id="img" style="padding-top:20px;"/>
-                                <div class="col-12" style="text-align:center;padding-top:20px">
-                                    <button class="btn btn-success">Submit</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="editprod" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                           <h4>Edit Product</h4>
-                        </div>
-                        <div class="modal-body">
-                            <form class="form-group form-inline">
-                                    <label for="name" style="padding-right:20px">Product : </label><input id="name" class="form-control" style="width:350px;"/><br>
-                                    <label for="M" style="padding-top:20px;padding-right:45px">M : </label><input id="M" class="form-control" style="padding-top:20px;width:350px;"/>
-                                    <label for="L" style="padding-top:20px;padding-right:17px">L : </label><input id="L" class="form-control" style="padding-top:20px;width:350px;"/>
-                                    <label for="XL" style="padding-top:20px;padding-right:17px">XL : </label><input id="XL" class="form-control" style="padding-top:20px;width:350px;"/>
-                                    <label for="Desc" style="padding-top:20px;padding-right:17px"></label><input id="desc" class="form-control" style="padding-top:20px;width:300px"/>
-                                    <label for-"img" style="padding-top:20px;padding-right:17px"></label><input type="file" class="form-control" id="img" style="padding-top:20px;"/>
-                                    <div class="col-12" style="text-align:center;padding-top:20px">                                            <button class="btn btn-success">Submit</button>
-                                    </div>
-                                </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+<body>
+    <div class="container-fluid">
+        <div class="col-md-6" style="padding-top:10px">
+            <button class="form-control lg btn btn-success" style="text-align:center;" data-toggle="modal" data-target="#addprod">Add New Product
+                <span class="glyphicon glyphicon-plus" style="margin-right:15px"></span>
+            </button>
         </div>
-</div>
+        <div class="col-md-12">
+            <table class="table table-hover" >
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>type</th>
+                        <th>M</th>
+                        <th>L</th>
+                        <th>XL</th>
+                        <th>Desc.</th>
+                        <th>Image</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <div data-spy="scroll">
+                <tbody>
+                    <%allproduct.forEach(function(allproduct){%>
+                        <tr>
+                            <td>
+                                <%=allproduct.numproduct%>
+                            </td>
+                            <td>
+                                <%=allproduct.title%>
+                            </td>
+                            <td>
+                                <%=allproduct.cost%>
+                            </td>
+                            <td>
+                                <%=allproduct.type%>
+                            </td>
+                            <td>
+                                <%=allproduct.M%>
+                            </td>
+                            <td>
+                                <%=allproduct.L%>
+                            </td>
+                            <td>
+                                <%=allproduct.XL%>
+                            </td>
+                            <td class="fixed">
+                                <%=allproduct.description%>
+                            </td>
+                            <td class="fixed"> 
+                                <%=allproduct.image%>
+                            </td>
+                            <!--Edit-->
+                            <td>
+                                <button class="btn btn-default" onclick=" window.location.href='/edit/<%=allproduct.numproduct%>'"
+                                    data-toggle="modal" data-target="#editprod">
+                                    <span class="glyphicon glyphicon-wrench"></span>
+                                </button>
+                            </td>
+                            <!--Delete-->
+                            <td>
+                                <button class="btn btn-danger">
+                                    <span class="glyphicon glyphicon-trash" onclick=" window.location.href='/delete/<%=allproduct.numproduct%>'"></span>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <% }) %>
+                </tbody>
+                </div>
+            </table>
+        </div>
+        <div id="addprod" class="modal fade" role="dialog">
+            <div class="container-fluid">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:red"><span aria-hidden="true">&times;</span></button>
+                        <h4>Add Product</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-inline" method='POST' action="/products">
+                            <div class="form-group">
+                                <label for="name" style="padding-right:20px">Product : </label>
+                                <input id="name" name="title" class="form-control" style="width:350px;"
+                                />
+                                <br>
+                            </div>
+                            <div class="form-group">
+                                <label for="type" style="padding-right:40px;padding-top:20px">Type : </label>
+                                <input id="type" name="type" class="form-control" style="width:350px;padding-top:20px" />
+                                <br>
+                            </div>
+                            <div class="form-group">
+                                <label for="M" style="padding-top:20px;padding-right:60px">M : </label>
+                                <input id="M" name="M" class="form-control" style="padding-top:20px;width:350px;"
+                                />
+                                <br>
+                            </div>
+                            <div class="form-group">
+                                <label for="L" style="padding-top:20px;padding-right:65px">L : </label>
+                                <input id="L" name="L" class="form-control" style="padding-top:20px;width:350px;"
+                                />
+                                <br>
+                            </div>
+                            <div class="form-group">
+                                <label for="XL" style="padding-top:20px;padding-right:55px">XL : </label>
+                                <input id="XL" name="XL" class="form-control" style="padding-top:20px;width:350px;"
+                                />
+                                <br>
+                            </div>
+                            <div class="form-group">
+                                <label for="Desc" style="padding-top:20px;padding-right:0px">Description : </label>
+                                <input id="desc" name="description" class="form-control" style="padding-top:20px;width:300px"
+                                />
+                                <br>
+                            </div>
+                            <div class="form-group">
+                                <label for- "img" style="padding-top:20px;padding-right:50px">Image : </label>
+                                <input type="file" id="img" name="image" style="padding-top:20px;" multiple/>
+                            </div>
+                            <div class="col-12" style="text-align:center;padding-top:20px">
+                                <button class="btn btn-success" type="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+
+<style>
+    .fixed{
+        width:300px
+    }
+</style>
